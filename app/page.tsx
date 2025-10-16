@@ -261,6 +261,8 @@ export default function Home() {
                 <span className="text-sm font-medium text-primary-700">Trusted by 10,000+ Health Enthusiasts</span>
               </div>
 
+
+              
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 leading-tight">
                 Pure Nature,
                 <span className="text-primary-600 block mt-2">Pure Goodness</span>
