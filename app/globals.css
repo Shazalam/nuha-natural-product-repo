@@ -1,26 +1,405 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --primary-50: #f0fdf4;
+  --primary-100: #dcfce7;
+  --primary-200: #bbf7d0;
+  --primary-300: #86efac;
+  --primary-400: #4ade80;
+  --primary-500: #22c55e;
+  --primary-600: #16a34a;
+  --primary-700: #15803d;
+  --primary-800: #166534;
+  --primary-900: #14532d;
+
+  /* Neutral Colors */
+  --neutral-50: #fafafa;
+  --neutral-100: #f4f4f5;
+  --neutral-200: #e4e4e7;
+  --neutral-300: #d4d4d8;
+  --neutral-400: #a1a1aa;
+  --neutral-500: #71717a;
+  --neutral-600: #52525b;
+  --neutral-700: #3f3f46;
+  --neutral-800: #27272a;
+  --neutral-900: #18181b;
+
+  /* Semantic Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+
+  /* Typography */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom utility classes using CSS variables */
+@layer utilities {
+  .text-primary { color: var(--primary-600); }
+  .bg-primary { background-color: var(--primary-600); }
+  .border-primary { border-color: var(--primary-600); }
+  
+  .text-muted { color: var(--neutral-600); }
+  .bg-muted { background-color: var(--neutral-100); }
+  
+  .shadow-custom { box-shadow: var(--shadow-lg); }
+  .transition-custom { transition: all var(--transition-normal); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-400);
+  border-radius: var(--radius-lg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-600);
+}
+
+/* Enhanced form animations */
+.form-group {
+  transition: all 0.3s ease;
+}
+
+.form-group:focus-within {
+  transform: translateY(-2px);
+}
+
+/* Custom checkbox styles */
+input[type="checkbox"] {
+  border-radius: 4px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+/* Loading animation for buttons */
+@keyframes button-loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.button-loading {
+  animation: button-loading 1.5s ease-in-out infinite;
+}
+
+/* Enhanced focus states */
+input:focus, button:focus {
+  outline: none;
+  ring: 2px solid var(--primary-500);
+  ring-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+button, input, a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced form animations */
+.form-group {
+  transition: all 0.3s ease;
+}
+
+.form-group:focus-within {
+  transform: translateY(-2px);
+}
+
+/* Custom checkbox styles */
+input[type="checkbox"] {
+  border-radius: 4px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+/* Loading animation for buttons */
+@keyframes button-loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.button-loading {
+  animation: button-loading 1.5s ease-in-out infinite;
+}
+
+/* Enhanced focus states */
+input:focus, button:focus {
+  outline: none;
+  ring: 2px solid var(--primary-500);
+  ring-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+button, input, a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* Cart specific animations */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.cart-notification-enter {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.cart-notification-exit {
+  animation: slideOutRight 0.3s ease-in;
+}
+
+/* Quantity input styles */
+.quantity-input {
+  -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Smooth transitions for cart operations */
+.cart-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-item-removing {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* Sticky summary */
+.sticky-summary {
+  position: sticky;
+  top: 2rem;
+}
+
+
+/* Admin Dashboard Specific Styles */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.admin-table {
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.admin-table th {
+  background-color: #f9fafb;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}
+
+.admin-table td {
+  padding: 1rem 1.5rem;
+  white-space: nowrap;
+}
+
+.admin-table tr {
+  transition: background-color 0.2s ease;
+}
+
+.admin-table tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Modal animations */
+.modal-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.modal-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.modal-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Status badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.status-badge:hover {
+  transform: scale(1.05);
+}
+
+/* Loading states */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Chart containers */
+.chart-container {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .admin-table {
+    font-size: 0.875rem;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Custom scrollbar for admin */
+.admin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.admin-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.admin-scrollbar::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.admin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
