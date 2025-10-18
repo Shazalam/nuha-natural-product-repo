@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function AboutPage() {
   const teamMembers = [
@@ -87,8 +86,8 @@ export default function AboutPage() {
               <span className="text-green-600 block">Pure Goodness</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              From humble beginnings to becoming your trusted source for organic products, 
-              we're committed to bringing nature's finest to your doorstep.
+             {` From humble beginnings to becoming your trusted source for organic products, 
+              we're committed to bringing nature's finest to your doorstep.`}
             </p>
           </div>
         </div>
@@ -109,9 +108,9 @@ export default function AboutPage() {
                 ethically sourced, certified organic goods.
               </p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                We're more than just a store—we're a movement towards sustainable 
+               {` We're more than just a store—we're a movement towards sustainable 
                 living, supporting local farmers, and preserving our planet for 
-                future generations.
+                future generations.`}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link

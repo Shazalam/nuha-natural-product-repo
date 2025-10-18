@@ -41,16 +41,10 @@
 
 
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Providers from '@/providers';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-// import Navbar from '../components/Navbar';
-// import Footer from '../components/Footer';
-// import Providers from './providers';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Nuha - Pure Nature, Pure Goodness',
@@ -72,7 +66,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body >
         <Providers>
           <div className="flex flex-col min-h-screen">
             <Navbar/>

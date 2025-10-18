@@ -146,8 +146,8 @@ export default function PrivacyPolicy() {
             <div className="mt-12 p-6 bg-yellow-50 rounded-xl border border-yellow-200">
               <h3 className="font-bold text-yellow-800 mb-2">Policy Updates</h3>
               <p className="text-yellow-700 text-sm">
-                We may update this policy from time to time. We will notify you of any changes by 
-                posting the new policy on this page and updating the "Last Updated" date.
+                {`We may update this policy from time to time. We will notify you of any changes by 
+                posting the new policy on this page and updating the "Last Updated" date.`}
               </p>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function PrivacyPolicy() {
             Questions About Your Data?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            We're here to help you understand how your information is used and protected.
+          {`We're here to help you understand how your information is used and protected.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

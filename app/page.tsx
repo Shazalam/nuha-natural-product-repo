@@ -262,7 +262,7 @@ export default function Home() {
               </div>
 
 
-              
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-neutral-900 leading-tight">
                 Pure Nature,
                 <span className="text-primary-600 block mt-2">Pure Goodness</span>
@@ -318,7 +318,7 @@ export default function Home() {
                         width={300}
                         height={300}
                         loading={"lazy"} // eager for first 4 products, lazy for rest
-                        // className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      // className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
                   </div>
@@ -390,7 +390,7 @@ export default function Home() {
               Why Choose Nuha?
             </h2>
             <p className="mt-4 text-lg text-neutral-600 max-w-2xl mx-auto">
-              We're committed to bringing you the best organic experience
+              {`We're committed to bringing you the best organic experience`}
             </p>
           </div>
 
@@ -572,8 +572,8 @@ export default function Home() {
                 </div>
 
                 <p className="text-neutral-600 italic mb-8 text-lg leading-relaxed relative">
-                  <span className="text-4xl text-primary-200 absolute -top-4 -left-2">"</span>
-                  {testimonial.content}
+                  <span className="text-4xl text-primary-200 absolute -top-4 -left-2">&quot;</span>
+                  {`${testimonial.content}`}
                 </p>
 
                 <div className="flex items-center space-x-4">

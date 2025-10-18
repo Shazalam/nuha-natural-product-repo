@@ -21,8 +21,8 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
       </div>
 
       <p className="text-neutral-600 italic mb-8 text-lg leading-relaxed relative">
-        <span className="text-4xl text-primary-200 absolute -top-4 -left-2">"</span>
-        {testimonial.content}
+        <span className="text-4xl text-primary-200 absolute -top-4 -left-2">&quot;</span>
+        {`${testimonial.content}`}
       </p>
 
       <div className="flex items-center space-x-4">

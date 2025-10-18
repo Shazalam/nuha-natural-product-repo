@@ -1,7 +1,6 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 // Mock cart data
 const initialCartItems = [
@@ -102,7 +101,7 @@ export default function CartPage() {
             </div>
             <h1 className="text-3xl font-bold text-neutral-900 mb-4">Your Cart is Empty</h1>
             <p className="text-neutral-600 mb-8 max-w-md mx-auto">
-              Looks like you haven't added any organic goodies to your cart yet. Start shopping to discover our premium selection!
+             {` Looks like you haven't added any organic goodies to your cart yet. Start shopping to discover our premium selection!`}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

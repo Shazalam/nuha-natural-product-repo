@@ -15,8 +15,8 @@ export default function Footer() {
               <span className="text-xl font-bold">Nuha</span>
             </Link>
             <p className="text-green-200 leading-relaxed">
-              Your trusted source for premium organic and natural products. 
-              We're committed to quality, sustainability, and your well-being.
+             {` Your trusted source for premium organic and natural products. 
+              We're committed to quality, sustainability, and your well-being.`}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-green-200 hover:text-white transition-colors">

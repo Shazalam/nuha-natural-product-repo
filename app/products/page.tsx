@@ -1,6 +1,5 @@
 'use client';
 import { useState, useMemo } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 
 // Extended product data
@@ -372,7 +371,7 @@ export default function ProductsPage() {
                     )}
                     {searchQuery && (
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        Search: "{searchQuery}"
+                        Search: {`${searchQuery}`}
                         <button
                           onClick={() => setSearchQuery('')}
                           className="ml-1 hover:text-blue-900"
