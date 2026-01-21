@@ -306,7 +306,9 @@ export default function ProductsPage() {
           <div className={`lg:w-80 ${showFilters ? 'block' : 'hidden lg:block'}`}>
             <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-24">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-neutral-900">Filters</h2>
+                <h2 className="text-xl font-bold text-neutral-900">
+                  Filters
+                  </h2>
                 <button
                   onClick={resetFilters}
                   className="text-primary-600 hover:text-primary-700 text-sm font-medium"
